@@ -1,0 +1,58 @@
+Ask the user to enter in the value of four (theoretical) sales that their business has made,
+ensuring you convert the input into an appropriate type. Store these in what you deem
+the most appropriate data structure. 
+
+sale_one <- ASK INPUT WITH PROMPT "Enter Sale 1:" AS FLOAT
+sale_two <- ASK INPUT WITH PROMPT "Enter Sale 2:" AS FLOAT
+sale_three <- ASK INPUT WITH PROMPT "Enter Sale 3:" AS FLOAT
+sale_four <- ASK INPUT WITH PROMPT "Enter Sale 4:" AS FLOAT
+
+sale_list <- LIST of sale_one, sale_two, sale_three, sale_four
+
+In the case of the fourth and second sales, multiply
+the sales by 1.1 such that GST has been considered to be ‘applied’ to these sales.
+
+sale_list[1] <- sale_list[1] * 1.1
+sale_list[3] <- sale_list[3] * 1.1
+
+Undertake the reverse calculation to the remaining two sales.
+
+sale_list[0] <- sale_list[0] / 1.1
+sale_list[2] <- sale_list[2] / 1.1
+
+Ask the user for one more
+sale
+
+sale_five <- ASK INPUT WITH PROMPT "Enter Sale 5:" AS FLOAT
+
+Finally, add (sum) together all the values that have
+been asked for, insert this after the first sale.and calculated and then present the total to the user.
+
+sale_list <- INSERT sale_five INTO sale_list AT INDEX 1
+
+grand_total <- sale_list[0] + sale_list[1] + sale_list[2] + sale_list[3] + sale_list[4]
+OUTPUT grand_total
+END
+
+START
+    sale_one <- ASK INPUT WITH PROMPT "Enter Sale 1:" AS FLOAT
+    sale_two <- ASK INPUT WITH PROMPT "Enter Sale 2:" AS FLOAT
+    sale_three <- ASK INPUT WITH PROMPT "Enter Sale 3:" AS FLOAT
+    sale_four <- ASK INPUT WITH PROMPT "Enter Sale 4:" AS FLOAT
+
+    sale_list <- LIST of sale_one, sale_two, sale_three, sale_four
+
+    sale_list[1] <- sale_list[1] * 1.1
+    sale_list[3] <- sale_list[3] * 1.1
+    
+    sale_list[0] <- sale_list[0] / 1.1
+    sale_list[2] <- sale_list[2] / 1.1
+
+    sale_five <- ASK INPUT WITH PROMPT "Enter Sale 5:" AS FLOAT
+
+    sale_list <- INSERT sale_five INTO sale_list AT INDEX 1
+
+    grand_total <- sale_list[0] + sale_list[1] + sale_list[2] + sale_list[3] + sale_list[4]
+    
+    OUTPUT grand_total
+END

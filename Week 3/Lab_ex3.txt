@@ -1,0 +1,24 @@
+Ask the user to enter in the alphanumeric ticker codes of three shares / stocks that the
+user (theoretically) owns and store these in a manner that they can be referred to using a
+single variable and the values cannot be changed. Repeat this process for another three
+shares / stocks that are stored in a different single variable, which can be considered as
+the ticker codes held by the users’ superannuation account. Determine the unique stocks
+held by both the user and their superannuation account, store the result in a single
+variable that cannot be changed and then present the result to the user.
+
+START
+    code_one <- ASK INPUT WITH PROMPT "Enter Code 1:"
+    code_two <- ASK INPUT WITH PROMPT "Enter Code 2:"
+    code_three <- ASK INPUT WITH PROMPT "Enter Code 3:"
+    
+    tuple_codes_self <- TUPLE OF code_one, code_two, code_three
+
+    code_one <- ASK INPUT WITH PROMPT "Enter Code 1:"
+    code_two <- ASK INPUT WITH PROMPT "Enter Code 2:"
+    code_three <- ASK INPUT WITH PROMPT "Enter Code 3:"
+
+    tuple_codes_super <- TUPLE OF code_one, code_two, code_three
+
+    tuple_unique_codes <- (tuple_codes_self AS SET UNION tuple_codes_super AS SET) AS TUPLE
+    OUTPUT tuple_unique_codes
+END

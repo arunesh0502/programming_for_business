@@ -1,0 +1,13 @@
+Ask the user to enter in the name of a business, which should be stored in a variable and
+then converted to uppercase and stored in the same variable. Present to the user the
+number of words that have been entered in by the user, which could then be used by the
+user for the design of marketing collateral
+
+START
+    business_name <- ASK INPUT WITH THE PROMPT "Enter Business Name:" 
+    business_name <- business_name TO UPPERCASE
+
+    word_count <- COUNT "" IN business_name + 1
+
+    OUTPUT word_count
+END

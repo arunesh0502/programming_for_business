@@ -1,0 +1,43 @@
+Create an efficient data structure to store the details of two separate employees. For
+each of the employees, their name, email address and sales department codes (whole
+numbers) should be stored. The total value of sales for each employee should also be
+stored. Each employee is a member of exactly two sales departments which may or may
+not be unique. Ask the user for the requisite information to fill this structure, do so, then
+present to the user both the completed and filled structure defined above and the sum of
+the employees’ sales, as well as changing the first employees’ name to ‘Jane’ and
+printing the name from said structure
+
+START
+    employee_1_name <- ASK INPUT WITH PROMPT "Employee 1 Name:" 
+    employee_1_email <- ASK INPUT WITH PROMPT "Employee 1 Email:"
+    employee_1_dept_1 <- ASK INPUT WITH PROMPT "Employee 1 Department Code 1:" AS INTEGER
+    employee_1_dept_2 <- ASK INPUT WITH PROMPT "Employee 1 Department Code 2:" AS INTEGER
+    employee_1_sales <- ASK INPUT WITH PROMPT "Employee 1 Sales:" AS FLOAT
+
+    employee_one_dict <- DICTIONARY WITH
+       name: employee_1_name,
+       email: employee_1_email,
+       departments: LIST WITH employee_1_dept_1, employee_1_dept_2
+       sales: employee_1_sales
+
+    employee_2_name <- ASK INPUT WITH PROMPT "Employee 2 Name:" 
+    employee_2_email <- ASK INPUT WITH PROMPT "Employee 2 Email:"
+    employee_2_dept_1 <- ASK INPUT WITH PROMPT "Employee 2 Department Code 1:" AS INTEGER
+    employee_2_dept_2 <- ASK INPUT WITH PROMPT "Employee 2 Department Code 2:" AS INTEGER
+    employee_2_sales <- ASK INPUT WITH PROMPT "Employee 2 Sales:" AS FLOAT
+
+    employee_two_dict <- DICTIONARY WITH
+       name: employee_2_name,
+       email: employee_2_email,
+       departments: LIST WITH employee_2_dept_1, employee_2_dept_2
+       sales: employee_2_sales
+
+    list_employees <- LIST WITH employee_one_dict, employee_two_dict
+    OUTPUT list_employees
+
+    total_sales <- list_employees[0]["sales"] + list_employees[1]["sales"]
+    OUTPUT total_sales
+
+    list_employees[0]["name"] <- "Jane"
+    OUTPUT list_employees[0]["name"]
+END

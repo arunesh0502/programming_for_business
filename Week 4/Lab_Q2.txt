@@ -1,0 +1,18 @@
+Ask the user to enter some value of currency, as well as whether it is to be converted
+from USD to AUD or the reverse conversion (AUD to USD). If the value is to be
+converted from USD to AUD, then multiply the value by 1.54. To calculate the factor for
+the reverse conversion, use the inverse of the value. Calculate the correct result and
+present this to the user.
+
+START
+    currency_value <- ASK INPUT WITH PROMPT "Enter the currency value:" AS FLOAT
+    conversion <- ASK INPUT WITH PROMPT "Enter currency to convert to (USD or AUD):"
+
+    IF conversion EQUALS "AUD"
+       result <- currency_value * 1.54
+       OUTPUT result
+    ELSE
+       result <- currency_value / 1.54
+       OUTPUT result
+    END IF
+END

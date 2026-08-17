@@ -1,0 +1,27 @@
+The United Kingdom levies a tax on passenger arrivals via aeroplane to the country via Heathrow Airport. 
+A simplified and adjusted version of this tax will be considered for this question. 
+Firstly, ask the user the value of the airfare that they have purchased. 
+Then, ask how many tickets they have purchased (we will assume they are all the same price and type). 
+Next, ask them to enter in the type of ticket purchase (one of Economy, Business or First). 
+Economy tickets are levied 2% of the ticket value as a tax, Business tickets are levied 3% and
+First class tickets are levied 4%. Calculate the applicable tax on all tickets and present it to the user.  
+
+
+START
+    airfare <- ASK INPUT WITH PROMPT "Enter the airfare per ticket:"
+    number_of_tickets <- ASK INPUT WITH PROMPT "Enter the number of tickets:" AS INTEGER
+    ticket_type <- ASK INPUT WITH PROMPT "Enter ticket type (Economy, Business or First):"
+
+    IF ticket_type EQUALS "Economy":
+        tax_rate <- 0.02
+    ELSE IF ticket_type EQUALS "Business":
+        tax_rate <- 0.03
+    ELSE
+        tax_rate <- 0.04
+    END IF
+
+    total_airfare <- airfare * number_of_tickets
+    total_tax <- total_airfare * tax_rate
+
+    OUTPUT total_tax
+END

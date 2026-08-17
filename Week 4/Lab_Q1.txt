@@ -1,0 +1,13 @@
+1. Consider the following expressions, where the value of variable x is equal to 3 and the value
+of variable y is equal to “7”. Without using Python, consider if each of these expressions
+would evaluate to True or False:
+a. y == 7                            a. True
+b. x < 5                             b. True
+c. y != 7                            c. False
+d. x in range(0, 3)                  d. False
+e. (x == 3) and (y == 7)             e. True
+f. (x == 3) or (y == 7)              f. True
+g. x >= 3                            g. True
+h. y is “7”                          h. False
+i. (x > -2) and (int(y) <= 7)        i. True
+j. {x, y} > {x}                      j. True

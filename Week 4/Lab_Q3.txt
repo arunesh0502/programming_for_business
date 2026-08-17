@@ -1,0 +1,14 @@
+Ask the user to enter two strings – the first denoted as sub_string and the second as
+full_string. If the sub_string is located within the full_string, inform the user
+as much. If not, also inform them of this.
+
+START
+    sub_string <- ASK INPUT WITH PROMPT "Enter the string one:"
+    full_string <- ASK INPUT WITH PROMPT "Enter the string two:"
+
+    IF sub_string IN full_string:
+        OUTPUT "The sub-string is located within the full string."
+    ELSE
+        OUTPUT "The sub-string is not located within the full string."
+    END IF
+END

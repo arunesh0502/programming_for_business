@@ -1,0 +1,28 @@
+A shipping agent needs to determine the number of trucks required to transport a
+shipment of items to the port from their facility. As a simplified measure, the volumetric
+size of the shipment will be considered only. Ask the user to enter the length, width and
+height of the shipment of an item. Calculate the total volume of the shipment. If the
+shipment is less than 10 cubic metres, then a standard truck is required. If the shipment
+is between 10 and 20 cubic metres inclusive, then a B-Double truck is required. If the
+shipment is between 20 and 30 cubic metres non-inclusive, then a B-Triple truck is
+required. If the shipment is any larger, then the user should be prompted to re-calculate
+their shipment and try again. Present to the user the relevant advice based upon the
+volumetric calculation.
+
+START
+    length <- ASK INPUT WITH PROMPT "Enter the length of the shipment:" AS FLOAT
+    width <- ASK INPUT WITH PROMPT "Enter the width of the shipment:" AS FLOAT
+    height <- ASK INPUT WITH PROMPT "Enter the height of the shipment:" AS FLOAT
+
+    volume <- length * width * height
+
+    IF volume IS LESS THAN 10:
+        OUTPUT "A standard truck is required."
+    ELSE IF volume IS GREATER THAN OR EQUAL TO 10 AND volume IS LESSER THAN OR EQUAL TO 20:
+        OUTPUT "A B-Double truck is required."
+    ELSE IF volume IS GREATER THAN 20 AND volume IS LESS THAN 30 
+        OUTPUT "A B-Triple truck is required."
+    ELSE
+        OUTPUT "Please re-calculate your shipment and try again."
+    END IF
+END

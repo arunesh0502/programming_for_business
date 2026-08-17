@@ -16,8 +16,10 @@ START
         tax_rate <- 0.02
     ELSE IF ticket_type EQUALS "Business":
         tax_rate <- 0.03
-    ELSE
+    ELSE IF ticket_type EQUALS "First Class"
         tax_rate <- 0.04
+    ELSE 
+        OUTPUT "Please try again"
     END IF
 
     total_airfare <- airfare * number_of_tickets

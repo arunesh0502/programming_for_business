@@ -6,8 +6,10 @@ if ticket_type == "Economy":
     tax_rate = 0.02
 elif ticket_type == "Business":
     tax_rate = 0.03
-else:
+elif ticket_type == "First":
     tax_rate = 0.04
+else:
+    print("Please try again")
 
 total_airfare = airfare * number_of_tickets
 total_tax = total_airfare * tax_rate

@@ -17,12 +17,12 @@ START
     volume <- length * width * height
 
     IF volume IS LESS THAN 10:
-        OUTPUT "A standard truck is required."
+        OUTPUT "Standard truck is required."
     ELSE IF volume IS GREATER THAN OR EQUAL TO 10 AND volume IS LESSER THAN OR EQUAL TO 20:
-        OUTPUT "A B-Double truck is required."
+        OUTPUT "B-Double truck is required."
     ELSE IF volume IS GREATER THAN 20 AND volume IS LESS THAN 30 
-        OUTPUT "A B-Triple truck is required."
+        OUTPUT "B-Triple truck is required."
     ELSE
-        OUTPUT "Please re-calculate your shipment and try again."
+        OUTPUT "Please try again."
     END IF
 END

@@ -1,0 +1,32 @@
+d. Utilise the Pseudocode from your Question 2D program in Lab 4 (regarding truck
+calculations). Modify this Pseudocode to utilise a loop for the data input part of this
+program, modifying your prompts to ask the user only to enter a ‘dimension’. You may re-
+use as much of your Pseudocode as you like.
+
+START
+
+    dimensions <- EMPTY LIST
+
+    FOR dimension_number <- 1 TO 3
+
+        dimension <- ASK INPUT WITH PROMPT "Enter the dimension:" AS FLOAT
+
+        dimensions <- APPEND dimension TO dimensions
+
+    length <- dimensions[0]
+    width <- dimensions[1]
+    height <- dimensions[2]
+
+    volume <- length * width * height
+
+    IF volume IS LESS THAN 10:
+        OUTPUT "Standard truck is required."
+    ELSE IF volume IS GREATER THAN OR EQUAL TO 10 AND volume IS LESSER THAN OR EQUAL TO 20:
+        OUTPUT "B-Double truck is required."
+    ELSE IF volume IS GREATER THAN 20 AND volume IS LESS THAN 30:
+        OUTPUT "B-Triple truck is required."
+    ELSE
+        OUTPUT "Please try again."
+    END IF
+
+END

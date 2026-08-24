@@ -1,0 +1,83 @@
+a. Utilise the Pseudocode from your Question 3A program in Lab 3 (regarding sales and
+GST). Modify this Pseudocode to utilise two loops; one for data entry and one for
+calculations. You may re-use as much of your Pseudocode as you like. You may wish to
+design your loops to ensure that only positive valued sales are entered.
+
+START
+
+    sale_list <- EMPTY LIST
+
+    FOR sale_number <- 1 TO 5
+
+        sale <- ASK INPUT WITH PROMPT "Enter Sale:" AS FLOAT
+
+        WHILE sale <= 0
+            OUTPUT "Sale must be a positive value."
+            sale <- ASK INPUT WITH PROMPT "Enter Sale:" AS FLOAT
+        END WHILE
+
+        sale_list <- APPEND sale TO sale_list
+
+    END FOR
+
+
+    FOR sale_number <- 0 TO 4
+
+        IF sale_number = 1 OR sale_number = 3 THEN
+            sale_list[sale_number] <- sale_list[sale_number] * 1.1
+        ELSE
+            sale_list[sale_number] <- sale_list[sale_number] / 1.1
+        END IF
+
+    END FOR
+
+
+    grand_total <- 0
+
+    FOR sale_number <- 0 TO 4
+        grand_total <- grand_total + sale_list[sale_number]
+    END FOR
+
+    OUTPUT grand_total
+
+END
+
+#--------------------------------------------------
+# Without WHILE Loop, positive checker and merging
+#--------------------------------------------------
+
+START
+
+    sale_list <- EMPTY LIST
+
+    FOR count <- 1 TO 5
+
+        sale <- ASK INPUT WITH PROMPT "Enter Sale:" AS FLOAT
+
+        sale_list <- APPEND sale TO sale_list
+
+    END FOR
+
+
+    FOR count <- 0 TO 4
+
+        IF count MOD 2 = 1 THEN
+            sale_list[count] <- sale_list[count] * 1.1
+        ELSE
+            sale_list[count] <- sale_list[count] / 1.1
+        END IF
+
+    END FOR
+
+
+    grand_total <- 0
+
+    FOR count <- 0 TO 4
+
+        grand_total <- grand_total + sale_list[count]
+
+    END FOR
+
+    OUTPUT grand_total
+
+END

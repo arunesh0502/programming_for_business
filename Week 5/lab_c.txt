@@ -1,0 +1,42 @@
+c. Utilise the Pseudocode from your Question 3D program in Lab 3 (regarding employee
+data). Modify this Pseudocode to utilise two loops, one nested within another, for the
+data entry part of the program. You may re-use as much of your Pseudocode as you like.
+
+START
+
+    list_employees <- EMPTY LIST
+
+    FOR count <- 1 TO 2
+
+        employee_name <- ASK INPUT WITH PROMPT "Employee " + count + " Name:"
+        employee_email <- ASK INPUT WITH PROMPT "Employee " + count + " Email:"
+        
+        department_list <- EMPTY LIST
+
+        FOR department_number <- 1 TO 2
+            department_code <- ASK INPUT WITH PROMPT "Employee " + count + " Department Code " + department_number + ":" AS INTEGER
+            department_list <- APPEND department_code TO department_list
+        END FOR
+
+        employee_sales <- ASK INPUT WITH PROMPT "Employee " + count + " Sales:" AS FLOAT
+
+        employee_dict <- DICTIONARY WITH
+            name: employee_name,
+            email: employee_email,
+            departments: department_list,
+            sales: employee_sales
+
+        list_employees <- APPEND employee_dict TO list_employees
+
+    END FOR
+
+
+    OUTPUT list_employees
+
+    total_sales <- list_employees[0]["sales"] + list_employees[1]["sales"]
+    OUTPUT total_sales
+
+    list_employees[0]["name"] <- "Jane"
+    OUTPUT list_employees[0]["name"]
+
+END

@@ -1,0 +1,31 @@
+b. Utilise the Pseudocode from your Question 3B program in Lab 3 (regarding stock ticker
+codes). Modify this Pseudocode to utilise two loops; both for different parts of the data
+entry part of the program. You may re-use as much of your Pseudocode as you like
+
+START
+
+    list_codes_self <- EMPTY LIST
+
+    FOR code_number <- 1 TO 3
+        code <- ASK INPUT WITH PROMPT "Enter Code " + code_number + ":"
+        list_codes_self <- APPEND code TO list_codes_self
+    END FOR
+
+    tuple_codes_self <- TUPLE OF list_codes_self 
+
+
+    list_codes_super <- EMPTY LIST
+
+    FOR code_number <- 1 TO 3
+        code <- ASK INPUT WITH PROMPT "Enter Code " + code_number + ":"
+        list_codes_super <- APPEND code TO list_codes_super
+    END FOR
+
+    tuple_codes_super <- TUPLE OF list_codes_super 
+
+
+    tuple_unique_codes <- (tuple_codes_self AS SET UNION tuple_codes_super AS SET) AS TUPLE
+
+    OUTPUT tuple_unique_codes
+
+END

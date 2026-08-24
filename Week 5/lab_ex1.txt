@@ -1,0 +1,13 @@
+Consider the following sequences of whole numbers. Without using Python, consider the
+simplest range() statements required to generate such a sequence:
+
+a. 1, 2, 3, 4             a. range(1, 5)
+b. 2, 4, 6, 8             b. range(2, 10, 2)
+c. 9, 8, 7, 6             c. range(9, 5, -1)
+d. -3, -2, -1, 0          d. range(-3, 1)
+e. -1, -2, -3, -4         e. range(-1, -5, -1)
+
+
+
+
+

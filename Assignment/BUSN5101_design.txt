@@ -1,0 +1,57 @@
+START
+    sale_one <- ASK INPUT WITH PROMPT "Enter Sale 1:" AS FLOAT
+    sale_one_treatment <- ASK INPUT WITH PROMPT "Enter GST Treatment for Sale 1 (GST-inclusive or GST-exclusive):"
+
+    IF sale_one_treatment = "GST-inclusive" 
+        sale_one_adjusted <- sale_one
+    ELSE 
+        sale_one_adjusted <- sale_one * 1.1
+    END IF
+
+    sale_two <- ASK INPUT WITH PROMPT "Enter Sale 2:" AS FLOAT
+    sale_two_treatment <- ASK INPUT WITH PROMPT "Enter GST Treatment for Sale 2 (GST-inclusive or GST-exclusive):"
+
+    IF sale_two_treatment = "GST-inclusive" 
+        sale_two_adjusted <- sale_two
+    ELSE 
+        sale_two_adjusted <- sale_two * 1.1
+    END IF
+
+    sale_three <- ASK INPUT WITH PROMPT "Enter Sale 3:" AS FLOAT
+    sale_three_treatment <- ASK INPUT WITH PROMPT "Enter GST Treatment for Sale 3 (GST-inclusive or GST-exclusive):"
+
+    IF sale_three_treatment = "GST-inclusive" 
+        sale_three_adjusted <- sale_three
+    ELSE 
+        sale_three_adjusted <- sale_three * 1.1
+    END IF
+
+    sale_four <- ASK INPUT WITH PROMPT "Enter Sale 4:" AS FLOAT
+    sale_four_treatment <- ASK INPUT WITH PROMPT "Enter GST Treatment for Sale 4 (GST-inclusive or GST-exclusive):"
+
+    IF sale_four_treatment = "GST-inclusive" 
+        sale_four_adjusted <- sale_four
+    ELSE 
+        sale_four_adjusted <- sale_four * 1.1
+    END IF
+
+
+    sale_list <- LIST of
+        sale_one_adjusted,
+        sale_two_adjusted,
+        sale_three_adjusted,
+        sale_four_adjusted
+
+    sale_five <- ASK INPUT WITH PROMPT "Enter Sale 5:" AS FLOAT
+    sale_five_treatment <- ASK INPUT WITH PROMPT "Enter GST Treatment for Sale 5 (GST-inclusive or GST-exclusive):"
+
+    IF sale_five_treatment = "GST-inclusive"
+        sale_five_adjusted <- sale_five
+    ELSE 
+        sale_five_adjusted <- sale_five * 1.1
+    END IF
+
+    sale_list <- INSERT sale_five_adjusted INTO sale_list AT INDEX 1
+    grand_total <- sale_list[0] + sale_list[1] + sale_list[2] + sale_list[3] + sale_list[4]
+    OUTPUT "Total GST-inclusive sales:", grand_total
+END

@@ -19,10 +19,31 @@ This repository contains my coursework and projects for the Programming for Busi
 
 ### Folder Structure
 
-Week 1/
-Week 2/
-.
-.
-.
-Assignments/
-Projects/
+#### Week 1
+- Introduction
+#### Week 2
+- Data Types and Variables
+#### Week 3
+- Data Structures
+#### Week 4
+- Control Flows (IF/ELSE IF/ELSE)
+#### Week 5
+- Loops (FOR & WHILE)
+#### Assignment
+- Individual Assignment Design and Solution
+#### Week 6
+- Functions 
+#### Week 7
+
+#### Week 8
+
+#### Week 9
+
+#### Week 10
+
+#### Project
+
+#### Week 11
+
+#### Week 12
+

@@ -1,0 +1,19 @@
+b. Utilise an anonymous function with the appropriate higher-order function to create two
+lists of stock codes named four_list and three_list, which (respectively) contain
+the four-character long stock codes from the input_list and three-character long
+stock codes from the it. The input_list would contain the codes IVV, ATEC, SQ2,
+RIO, VDHG and A200. Output the results to the users’ screen. Please note that the
+presence of a code should not be considered financial advice.
+
+START
+
+    input_list <- LIST OF "IVV", "ATEC", "SQ2", "RIO", "VDHG", "A200"
+
+    four_list <- (FILTER input_list BY LAMBDA x:LENGTH OF x = 4) AS LIST
+
+    three_list <- (FILTER input_list BY LAMBDA x:LENGTH OF x = 3) AS LIST
+
+    OUTPUT four_list
+    OUTPUT three_list
+
+END

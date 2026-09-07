@@ -1,0 +1,8 @@
+1. Consider the following components of a standard ‘block’ function (i.e. not an anonymous
+function). Through conversing with those around you, decide which of these are optional and
+required in function definitions:
+a. The name of the function;            a. Mandatory
+b. A comment about what it does;        b. Optional
+c. Data that is ‘exported’ from it;     c. Optional
+d. Data that is ‘imported’ to it;       d. Optional
+e. Statements that form its content.    e. Mandatory

@@ -1,0 +1,27 @@
+d. Utilise the Pseudocode from your Question 2A in Lab 4 (regarding USD to AUD
+conversion). Make a copy of and then modify this Pseudocode to convert the primary
+component of the code into a block function definition. The function named
+currency_converter should accept two arguments, currency_value which is the
+value of currency to convert and to_aud which is a Boolean value, when True will mean
+the conversion is from USD to AUD and when False, the opposite. Call (and output) the
+function such that 66 USD is converted to AUD and 100 AUD is converted to USD. You
+can assume that arguments are specified correctly. Assume the converted value is 0 in
+any other situation that may occur.
+
+FUNCTION: currency_converter
+IMPORT: currency_value, to_aud
+EXPORT: converted_value
+NOTES: Uses fixed value to approximate USD/AUD conversions
+ACTION:
+    converted_value <- 0
+    IF to_aud = TRUE THEN
+        converted_value <- currency_value * 1.54
+    ELSE IF to_aud = FALSE THEN
+        converted_value <- currency_value / 1.54
+        
+    END IF
+
+START
+    OUTPUT CALL currency_converter WITH 66, TRUE
+    OUTPUT CALL currency_converter WITH 100, FALSE
+END

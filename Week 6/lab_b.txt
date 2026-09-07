@@ -1,0 +1,22 @@
+a. Ask the user to enter in a number which will then be used to ask the user to enter in such
+a number of sales (i.e. if the user enters 3, they will then enter three sales values) which
+will be stored within a list. Utilise an anonymous function with the appropriate higher-
+order function to divide each sales value by 1.1 to calculate the GST-free value of each
+sale, with the results stored in a different listed named free_list and then output the
+results to the user.
+
+START
+
+    number_of_sales <- ASK INPUT WITH PROMPT "Enter number of sales:" AS INTEGER
+
+    sale_list <- EMPTY LIST
+
+    FOR each sale from 1 to number_of_sales
+        sale_value <- ASK INPUT WITH PROMPT "Enter sale value:" AS FLOAT
+        sale_list <- APPEND sale_value TO sale_list
+    END FOR
+
+    free_list <- (Map sale_list BY LAMBDA x:x/1.1) AS LIST
+    OUTPUT free_list
+
+END

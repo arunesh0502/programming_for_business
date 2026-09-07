@@ -1,0 +1,43 @@
+c. Utilise the Pseudocode from your Question 2C program in Lab 4 (regarding arrival tax at
+Heathrow). Make a copy of and then modify this Pseudocode to convert the primary
+component of the code into a block function definition. The function should accept any
+amount of arguments that is greater than or equal to one (an error message should be
+displayed otherwise) where each argument is a two-element tuple consisting of the
+individual ticket price as the first element and the second element being one of “E” (for Economy), “B” (for Business”) or “F” (for First). Calculate the tax payable on each ticket
+using the same values as in the previous exercise and accumulate the tax payable value
+for all tickets, which will be the value returned by the function. You should assume that
+the user will correctly enter in the values for the arguments, but not necessarily the
+current number of them. Test this function through making a call (and outputting the
+result) for two tickets – an economy ticket of cost 100 and a business ticket of cost 1000.
+
+FUNCTION: tax_calculator
+IMPORT: args
+EXPORT: tax_payable
+NOTES: Use args to calculate for indefinite number of tix
+
+ACTION:
+    tax_payable <- 0
+    IF NUMBER OF args < 1 THEN
+        OUTPUT "Error: At least one ticket is required."
+    ELSE
+        FOR each ticket IN args
+
+           ticket_price <- FIRST ELEMENT OF ticket
+           ticket_type <- SECOND ELEMENT OF ticket
+
+           IF ticket_type = "E" THEN
+              tax_rate <- 0.02
+           ELSE IF ticket_type = "B" THEN
+              tax_rate <- 0.03
+           ELSE IF ticket_type = "F" THEN
+              tax_rate <- 0.04
+           END IF
+
+           ticket_tax <- ticket_price * tax_rate
+           tax_payable <- tax_payable + ticket_tax
+        END FOR
+    END IF
+
+START
+    OUTPUT CALL tax_calculator WITH (100, "E"), (1000, "B")
+END 

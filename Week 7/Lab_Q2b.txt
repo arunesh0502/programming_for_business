@@ -1,0 +1,36 @@
+Define, design and write a function that takes two arguments; a list of whole numbers
+and a singular number. From this list of numbers, select one element at random. If this
+element matches the singular number, report “Bingo” to the user. If not, report to the user
+that they should try again. Call the function with example data to test it.
+
+START
+
+USE random
+
+FUNCTION: bingo_function
+IMPORT: number_list, selected_number
+EXPORT: none
+NOTES: uses random library to calculate bingo
+ACTION:
+
+    random_number <- CALL number FROM random WITH number_list
+
+    IF random_number = selected_number THEN
+        result <- "Bingo"
+    ELSE
+        result <- "Try again"
+    END IF
+
+    RETURN result
+
+END FUNCTION
+
+
+START
+
+    number_list <- LIST OF 10, 20, 30, 40, 50
+    selected_number <- 30
+
+    OUTPUT CALL bingo_function WITH number_list, selected_number
+
+END

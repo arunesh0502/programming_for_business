@@ -1,0 +1,15 @@
+Write a program that utilises a relevant type of loop to output the result of raising a user-
+inputted number to the powers of 0 to 5 inclusive, ensuring you inform the user of what
+result corresponds to which.
+
+START
+
+USE math
+     
+     base_value <- ASK USER WITH PROMPT "Enter a number: " AS INTEGER
+     
+     FOR power BETWEEN 0 AND 5 INCLUSIVE:
+         result <- CALL pow FROM math WITH base_value, power
+         OUTPUT base_value AS STRING + "^" + power AS STRING + "=" + result AS STRING
+     END FOR
+END

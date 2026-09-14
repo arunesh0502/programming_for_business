@@ -1,0 +1,23 @@
+Design a program which creates two different dates and times (datetimes) of your choice.
+Output both of these to the user in the format “Monday, 01 April 2024” and inform the
+user of which time (the first or the second) is earliest.
+
+START
+
+USE DATETIME
+
+    date_time_one <- CREATE DATETIME FOR 14/09/2026 16:30
+    date_time_two <- CREATE DATETIME FOR 15/09/2026 16:30
+
+    OUTPUT date_time_one WITH FORMAT "%A, %d %B %Y"
+    OUTPUT date_time_two WITH FORMAT "%A, %d %B %Y"
+
+    IF date_time_one < date_time_two THEN
+        OUTPUT "The first time is earliest."
+    ELSE IF date_time_two < date_time_one THEN
+        OUTPUT "The second time is earliest."
+    ELSE 
+        OUTPUT "The times are the same" 
+    END IF
+
+END

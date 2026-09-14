@@ -1,0 +1,7 @@
+1. Consider the current date and time of your lab. Write down below what you would expect to be
+output if a datetime string-format was used with such date and time:
+a. %Y-%m-%d              a. 2026-09-14
+b. %H:%M %p              b. 16:10 pm
+c. %y-%H                 c. 26-16
+d. %D                    d. 09/14/2026
+e. %a %b %d, ‘%y         e. Mon Sep 14, '26

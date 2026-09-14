@@ -1,0 +1,14 @@
+Write a program that asks the user for a particular directory (path) and then outputs (line
+by line) each file and folder which is located within said directory (path).
+
+START
+
+    USE os
+
+    path <- ASK USER INPUT WITH PROMPT "Enter a directory path: "
+    directory_ list <- CALL listdir FROM os WITH path
+    
+    FOR each_file IN directory_list:
+        OUTPUT each_file
+    END FOR
+END

@@ -1,0 +1,24 @@
+Utilising Pseudocode, design a program which generates a list of even 
+whole numbers between 0 and 22 inclusive. Utilise the appropriate function 
+to create a ndarray (numpy Array) with one row and twelve columns (1x12) that 
+stores this data from this list. Next, reshape this ndarray so it is in the 
+format of a 4x3 and a 3x4 ndarray, outputting both arrays to the user. 
+Finally, divide each element of the original array by two and output this
+changed array in the format of a 1x12 ndarray.
+
+
+START
+
+IMPORT numpy
+     data_list <- CREATE LIST WITH RANGE 0 to 22 INCLUSIVE STEP BY 2
+     numpy_array <- CREATE NUMPY ARRAY WITH data_list
+     four_by_three_array <- RESHAPE numpy_array TO DIMENSIONS 4 BY 3
+     three_by_four_array <- RESHAPE numpy_array TO DIMENSIONS 3 BY 4
+
+     OUTPUT four_by_three_array
+     OUTPUT three_by_four_array
+
+     divided_array <- numpy_array/2
+     OUPTUT divided_array
+END
+

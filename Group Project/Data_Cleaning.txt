@@ -1,0 +1,69 @@
+USE pandas
+
+FUNCTION: remove_aggregate_rows
+IMPORT: data
+EXPORT: cleaned_data
+NOTES: Removes DPIRD's pre-computed regional summary rows, i.e. the
+       rows where Town Locality holds the same name as Region
+ACTION:
+    town_names <- LOWERCASE OF (STRIP SPACES FROM data.Town_Locality)
+    region_names <- LOWERCASE OF (STRIP SPACES FROM data.Region)
+    cleaned_data <- FILTER data WHERE town_names != region_names
+    RETURN cleaned_data
+
+FUNCTION: convert_to_numeric
+IMPORT: data, index_cols
+EXPORT: data
+NOTES: Converts the index columns to numbers. Blanks and the "-"
+       placeholder become NULL, not zero, so averages skip them
+ACTION:
+    data[index_cols] <- CONVERT EACH COLUMN IN data[index_cols] TO A
+                        NUMBER, REPLACING ANY NON-NUMBER WITH NULL
+    RETURN data
+
+FUNCTION: round_years
+IMPORT: data
+EXPORT: data
+NOTES: Turns decimal years such as 2019.0000000000009 into whole years
+ACTION:
+    data.Year <- ROUND EACH VALUE OF data.Year TO A WHOLE NUMBER
+    RETURN data
+
+FUNCTION: top_n_by_year
+IMPORT: data, value_col, n
+EXPORT: result
+NOTES: Returns the n highest-value_col rows for each year present
+       in data. Built only from a loop, a filter, a sort and a head,
+       and reused three times below without changing a line
+ACTION:
+    result <- EMPTY TABLE
+    year_list <- UNIQUE VALUES OF data.Year
+
+    FOR each year IN year_list:
+        year_rows <- FILTER data WHERE Year = year
+        year_rows_sorted <- SORT year_rows BY value_col DESCENDING
+        year_top_n <- FIRST n ROWS OF year_rows_sorted
+        result <- CONCATENATE result AND year_top_n
+    END FOR
+
+    RETURN result
+
+START
+
+    # Stage 1: data cleaning
+    raw_data <- READ FILE "RPI_raw.csv" SKIPPING THE FIRST LINE (THE TITLE)
+    raw_data.columns <- UPPERCASE OF (STRIP SPACES FROM raw_data.columns)
+    OUTPUT "Rows in raw file: " + NUMBER OF ROWS IN raw_data AS STRING
+
+    index_cols <- LIST OF "FOOD", "CLOTHING", "HOUSING",
+        "HOUSEHOLD EQUIPMENT & OPERATION", "HOUSEHOLD SUPPLIES & SERVICES",
+        "TRANSPORTATION", "TOBACCO & ALCOHOL", "HEALTH & PERSONAL CARE",
+        "RECREATION & EDUCATION", "ALL GROUPS"
+
+    rpi <- CALL remove_aggregate_rows WITH raw_data
+    OUTPUT "Rows after removing aggregate rows: " + NUMBER OF ROWS IN rpi AS STRING
+    rpi <- CALL convert_to_numeric WITH rpi, index_cols
+    rpi <- CALL round_years WITH rpi
+
+    OUTPUT COUNT OF NULL VALUES IN EACH COLUMN OF rpi
+    SAVE rpi TO FILE "Cleaned_Dataset.csv"

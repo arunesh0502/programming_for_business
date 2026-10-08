@@ -69,6 +69,7 @@ index_cols = ["FOOD", "CLOTHING", "HOUSING", "HOUSEHOLD EQUIPMENT & OPERATION",
 rpi = remove_aggregate_rows(raw)
 print("Rows after removing aggregate rows:", len(rpi))
 rpi = convert_to_numeric(rpi, index_cols)
+rpi[index_cols] = rpi[index_cols].round(2) 
 rpi = round_years(rpi)
 
 # Evidence that missing values are now NaN, not zero

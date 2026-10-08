@@ -63,6 +63,7 @@ START
     rpi <- CALL remove_aggregate_rows WITH raw_data
     OUTPUT "Rows after removing aggregate rows: " + NUMBER OF ROWS IN rpi AS STRING
     rpi <- CALL convert_to_numeric WITH rpi, index_cols
+    rpi[index_cols] <- ROUND EACH VALUE OF rpi[index_cols] TO 2 DECIMAL PLACES
     rpi <- CALL round_years WITH rpi
 
     OUTPUT COUNT OF NULL VALUES IN EACH COLUMN OF rpi
